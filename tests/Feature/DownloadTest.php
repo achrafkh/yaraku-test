@@ -32,6 +32,7 @@ class DownloadTest extends TestCase
             ],
             "type" => "csv",
         ];
+
         $response = $this->json('GET', '/books/export/csv?' . http_build_query($requestData));
         $response->assertStatus(200)
             ->assertHeader('Content-Disposition', 'attachment; filename=' . $requestData['filename'] . '.csv');

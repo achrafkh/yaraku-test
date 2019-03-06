@@ -20,7 +20,7 @@ class BooksRepositoryTest extends TestCase
     public function testAllMethod()
     {
         $class = new BooksRepository(new Book);
-        $db_count = DB::table('books')->count();
+        $db_count = DB::table('books')->whereNull('deleted_at')->count();
         $repo_count = $class->all()->count();
 
         if ($repo_count != $db_count) {

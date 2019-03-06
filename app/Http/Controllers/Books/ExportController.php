@@ -33,7 +33,7 @@ class ExportController extends Controller
     }
 
     // custom Parsers
-    public function exports($type, Request $request)
+    public function __invoke($type, Request $request)
     {
 
         $validator = Validator::make($request->all(), [
@@ -77,6 +77,7 @@ class ExportController extends Controller
     }
 
     // Used a packaged for Parsing in this method
+    // Swap methods to test
     public function export($type, Request $request)
     {
 

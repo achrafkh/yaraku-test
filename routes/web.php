@@ -19,4 +19,4 @@ Route::resource('books', 'Books\\BooksController')->except([
     'create', 'show',
 ]);
 
-Route::get('books/export/{type}', 'Books\\ExportController@export');
+Route::get('books/export/{type}', 'Books\\ExportController');
