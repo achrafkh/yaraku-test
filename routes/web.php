@@ -14,9 +14,6 @@
 Route::get('/', function () {
     return redirect()->route('books.index');
 });
-Route::get('/home', function () {
-    return redirect()->route('books.index');
-});
 
 Route::resource('books', 'Books\\BooksController')->except([
     'create', 'show',

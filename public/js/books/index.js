@@ -11,16 +11,7 @@ $(document).ready(function(){
             $('#cardParent').removeClass('active');
         },
         order: [[ 1, "desc" ]],
-        displayLength: 25,
-        buttons: [
-            'copy', 'csv'
-        ],
-        aLengthMenu: [
-            [25, 50, 100, 200, -1],
-            [25, 50, 100, 200, "All"]
-        ],
         processing: true,
-        responsive: true,
         info: true,
         stateSave: false,
         bProcessing: true,
@@ -28,7 +19,6 @@ $(document).ready(function(){
         ajax: {
             url: endpoint,
             type: "GET",
-            data: {}
         },
         columns: getColumns(),
     });
@@ -105,8 +95,6 @@ $('#exportForm').submit(function(e){
         // no errors
         if(response.length == 0){
              // this is in helper.js, it basicly appends an a
-             console.log(link);
-             return false;
             downloadURI(link);
             $(this).parents('.modal').modal('hide');
         } else {
